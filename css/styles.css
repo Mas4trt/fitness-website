@@ -1,0 +1,234 @@
+@font-face {
+    font-family: "Heebo";
+    src: url("./fonts/Heebo-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Heebo";
+    src: url("./fonts/Heebo-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Yantramanav";
+    src: url("./fonts/Yantramanav-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-dark: #000000;
+    --color-light: #FFFFFF;
+    --color-dark-grey: #404040;
+    --color-light-grey: #c4c4c4;
+    --color-background: #131619;
+
+    --border-radius: 30px;
+    --border: 1px solid var(--color-light);
+
+    --font-family-base: "Heebo", sans-serif;
+    --font-family-accent: "Yantramanav", sans-serif;
+
+    --input-height: 54px;
+
+    --container-width: 1300px;
+    --container-padding-x: 15px;
+
+    --transition-duration: 0.2s;
+}
+
+body {
+    font-family: var(--font-family-base);
+    color: var(--color-light-grey);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.75;
+    background-color: var(--color-background);
+}
+
+a, 
+button,
+input, 
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+.header-logo:hover {
+  cursor: default;
+}
+
+a {
+  color:var(--color-light);
+}
+
+a:hover {
+  color: var(--color-light-grey);
+}
+
+.header-book-button:hover {
+  background-color: var(--color-light-grey);
+}
+
+.header-burger-button:hover {
+  background-color: var(--color-light-grey);
+  color: var(--color-dark-grey);
+}
+
+.container {
+    max-width:calc(var(--container-width) + var(--container-padding-x) * 2) ;
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-light);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 50px;
+  padding-inline: 32px;
+}
+
+.header-logo {
+  cursor: default;
+}
+
+.header-menu {
+  max-width: 484px;
+  height: 90px;
+}
+
+.header-menu-list {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.header-menu-link {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 7px;
+  height: 90px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.header-menu-link.is-current::after {
+  content: "";
+  width: 5px;
+  aspect-ratio: 1;
+  height: 5px;
+  background-color: currentColor;
+  border-radius: 50%;
+}
+
+.header-book-button {
+  display: inline-flex;
+  width: 124px;
+  height: 38px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 200%;
+  letter-spacing: 0.1em;
+  padding: 7px 26px 7px 26px;
+  border: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  column-gap: 39px;
+  height: 90px;
+  width: 209px;
+}
+
+.header-burger-button {
+  display: flex;
+  background-color: transparent;
+  padding: 14.5px 8px 13.5px 8px;
+  width: 40px;
+  aspect-ratio: 1;
+  row-gap: 4px;
+  border: var(--border);
+  border-radius: 50%;
+  color: var(--color-light);
+}
+
+.burger-lines-left {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 22px;
+  height: 11px;
+  row-gap: 4px;
+}
+
+.burger-lines-right {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 11px;
+  width: 22px;
+  height: 11px;
+  row-gap: 4px;
+}
+
+.burger-line {
+  width: 5.5px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+@media(max-width: 956px) {
+  .header {
+    flex-wrap: wrap;
+    row-gap: 5px;
+    padding-inline: 15px;
+  }
+  .header-menu {
+    order: 1;
+    flex-basis: 100%;
+  }
+  .header-menu-link {
+    height: 50px;
+  }
+
+}
+
+@media(max-width: 424px) {
+  .header {
+    column-gap: 20px;
+    padding-top: 15px;
+  }
+  .header-menu-link {
+    height: 32px;
+  }
+  .header-menu-list {
+    column-gap: 20px;
+  }
+  .header-actions {
+    column-gap: 20px;
+  }
+}
+
